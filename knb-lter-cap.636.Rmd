@@ -22,7 +22,10 @@ micromet_data <- DBI::dbGetQuery(pg, "
   FROM micromet.events
   JOIN micromet.observations ON (observations.event_id = events.id)
   JOIN micromet.variables ON (variables.id = observations.variable_id)
-  JOIN micromet.sites ON (sites.id = events.site_id) ;
+  JOIN micromet.sites ON (sites.id = events.site_id)
+  WHERE
+    timestamp >= '2021-01-01'
+  ;
   ")
 
   micromet_data <- micromet_data |>
@@ -342,44 +345,47 @@ EML::eml_validate(eml)
 capeml::write_cap_eml()
 ```
 
-# file placement
 
-## package details
+# file placement: data files
+
+## read package details
 
 ```{r package-details, eval=TRUE}
 
 # retrieve package details from config.yaml
-
 if (!file.exists("config.yaml")) {
   stop("config.yaml not found")
 }
-packageIdent <- yaml::yaml.load_file("config.yaml")$packageIdent
-packageNum   <- yaml::yaml.load_file("config.yaml")$packageNum
+package_configs <- capeml::read_package_configuration()
+identifier      <- package_configs$identifier
+scope           <- package_configs$scope
+
+version <- capeml::get_next_version(
+  provided_scope      = scope,
+  provided_identifier = identifier
+)
 ```
 
-## AWS settings
+## preview data files upload
 
-```{r S3_helper_functions}
+```{r preview-data-file-to-upload}
 
-# functions and setting for uploading to S3
+list.files(pattern = paste0(identifier, "_"))
+```
 
-library(aws.s3)
+## source AWS S3 settings
+
+```{r S3-helper-functions}
+
+# library(aws.s3)
 source("~/Documents/localSettings/aws.s3")
 ```
 
-## upload data files
+## upload data files to S3
 
-```{r preview_data_file_to_upload}
+```{r upload-data-S3}
 
-# preview data set files that will be uploaded to S3
-list.files(pattern = paste0(packageNum, "_"), recursive = TRUE)
-```
-
-```{r upload_data_S3}
-
-# upload files to S3
-
-lapply(list.files(pattern = paste0(packageNum, "_"), recursive = TRUE), gioseml::data_to_amz)
+lapply(list.files(pattern = paste0(identifier, "_")), capeml::data_to_amz)
 ```
 
 
@@ -388,10 +394,10 @@ lapply(list.files(pattern = paste0(packageNum, "_"), recursive = TRUE), gioseml:
 ## EDI: login
 
 ```{r edi-login, eval=TRUE, echo=TRUE, message=TRUE}
-
+  
 EDIutils::login(
-  userId   = keyring::key_get("edi_user"),
-  userPass = keyring::key_get("edi_pass")
+  userId   = keyring::key_get("edi_user", keyring = "edi"),
+  userPass = keyring::key_get("edi_pass", keyring = "edi")
 )
 
 ```
@@ -401,12 +407,12 @@ EDIutils::login(
 ```{r edi-evaluate, eval=TRUE, echo=TRUE, message=TRUE}
 
 evaluation <- EDIutils::evaluate_data_package(
-  eml         = paste0(packageIdent, ".xml"),
+  eml         = paste(scope, identifier, version, "xml", sep = "."),
   useChecksum = FALSE,
   env         = "staging"
 )
 
-Sys.sleep(120)
+Sys.sleep(8)
 
 eval_status <- EDIutils::check_status_evaluate(
   transaction = evaluation,
@@ -433,16 +439,19 @@ if (eval_status) {
 
 ```
 
+
 ## EDI: update
 
-```{r edi-update, eval=TRUE, echo=TRUE, message=TRUE}
+```{r update, eval=TRUE, echo=TRUE, message=TRUE}
 
 EDIutils::update_data_package(
-  eml         = paste0(packageIdent, ".xml"),
+  eml         = paste(scope, identifier, version, "xml", sep = "."),
+  useChecksum = FALSE,
   env         = "production"
 )
 
 ```
+
 
 ## EDI: logout
 
@@ -453,34 +462,22 @@ EDIutils::logout()
 ```
 
 
-# copy and move XML as needed
+# post processing
 
-```{r duplicate-xml-as-needed}
+remove data files (if desired)
 
-# XML to S3
-gioseml::eml_to_amz(list.files(pattern = paste0(packageIdent, ".xml")))
+```{r delete-data-files}
 
-# XML to cap-data-eml
-file.copy(
-  from = list.files(pattern = paste0(packageIdent, ".xml")),
-  to = "/home/srearl/localRepos/cap-metadata/cap-data-eml/"
-)
+dataFilesToRemove <- dir(pattern = paste0(identifier, "_"))
+file.remove(dataFilesToRemove)
 ```
 
-# delete data and xml files (optional)
+XML/EML file to Amazon and cap-metadata
 
-Preview files to delete:
+```{r delete-data-files}
+capeml::eml_to_amz(list.files(pattern = "knb.+xml"))
 
-```{r optional: preview-files-to-delete}
-
-dir(pattern = paste0(packageNum, "_"), recursive = TRUE)
-list.files(pattern = paste0(packageIdent, ".xml"), recursive = TRUE)
+file.copy(list.files(pattern = "knb.+xml"), "/home/srearl/localRepos/cap-metadata/cap-data-eml/")
+file.remove(list.files(pattern = "knb.+xml"))
 ```
 
-Delete files:
-
-```{r optional: delete-files}
-
-file.remove(dir(pattern = paste0(packageNum, "_"), recursive = TRUE))
-file.remove(list.files(pattern = paste0(packageIdent, ".xml")), recursive = TRUE)
-```

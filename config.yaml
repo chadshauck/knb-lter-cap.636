@@ -1,9 +1,7 @@
-packageNum: 636
-packageIdent: knb-lter-cap.636.10
+scope: knb-lter-cap
+identifier: 636
 baseURL: https://data.gios.asu.edu/datasets/cap/
 project: lter
-title: "CAP LTER weather stations at Papago Park and Lost Dutchman State Park in the greater Phoenix metropolitan area, ongoing since 2010"
+title: "CAP LTER weather stations at Papago Park and Lost Dutchman State Park in the greater Phoenix metropolitan area of central Arizona, USA, ongoing since 2010"
 maintenance: regular
-geographicCoverage:
-  geographicDescription: 'CAP LTER study area: greater Phoenix, Arizona (USA)
-  metropolitan area and surrounding Sonoran desert region'
+geographic_description: 'CAP LTER study area: greater Phoenix, Arizona (USA) metropolitan area and surrounding Sonoran desert region'
