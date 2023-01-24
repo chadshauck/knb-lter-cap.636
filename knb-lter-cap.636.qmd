@@ -1,10 +1,6 @@
 ---
 title: "capeml template"
 author: "information manager"
-date: Sys.Date()
-output: html_document
-editor_options: 
-  chunk_output_type: console
 ---
 
 # micromet_data
@@ -28,16 +24,16 @@ micromet_data <- DBI::dbGetQuery(pg, "
   ;
   ")
 
-  micromet_data <- micromet_data |>
-    tidyr::pivot_wider(
-      names_from  = variablecode,
-      values_from = reading
-      ) |>
-    dplyr::mutate(
-      site_code = as.factor(site_code)
-    )
+micromet_data <- micromet_data |>
+tidyr::pivot_wider(
+  names_from  = variablecode,
+  values_from = reading
+) |>
+dplyr::mutate(
+  site_code = as.factor(site_code)
+)
 
-  names(micromet_data) <- tolower(names(micromet_data))
+names(micromet_data) <- tolower(names(micromet_data))
 
 ```
 
@@ -48,10 +44,12 @@ micromet_data <- DBI::dbGetQuery(pg, "
 micromet_data_2021_present <- micromet_data |>
   dplyr::filter(timestamp >= "2021-01-01")
 
-try({
-  capeml::write_attributes(micromet_data_2021_present, overwrite = FALSE)
-  capeml::write_factors(micromet_data_2021_present, overwrite = FALSE)
-})
+# try({
+#   capeml::write_attributes(micromet_data_2021_present, overwrite = FALSE)
+#   capeml::write_factors(micromet_data_2021_present, overwrite = FALSE)
+# })
+
+capeml::update_attributes(micromet_data_2021_present)
 
 micromet_data_2021_present_desc <- "Micrometeorological data from the CAP LTER weather stations located at the Desert Botanical Garden and Lost Dutchman State Park, AZ, USA sites. Data are 10-min averages of measurements collected at 5-second intervals. Data collected 2021 through present."
 
@@ -121,10 +119,12 @@ maintenance_log <- readr::read_csv("maintenance_log.csv") |>
   dplyr::rename(site_code = site) |>
   dplyr::mutate(site_code = as.factor(site_code))
 
-try({
-  capeml::write_attributes(maintenance_log, overwrite = FALSE)
-  capeml::write_factors(maintenance_log, overwrite = FALSE)
-})
+# try({
+#   capeml::write_attributes(maintenance_log, overwrite = FALSE)
+#   capeml::write_factors(maintenance_log, overwrite = FALSE)
+# })
+
+capeml::update_attributes(micromet_data_2021_present)
 
 maintenance_log_desc <- "log of maintenance activity, especially sensor calibration and replacement, at the CAP LTER micromet towers"
 
@@ -145,70 +145,80 @@ See the gioseml package for examples of creating people resources from scratch.
 
 ```{r people}
 
-# creator(s) - required
+ds <- "~/Dropbox/floating/cap_authors.csv"
 
-jonAllen <- gioseml::create_role(
-  firstName = "jon",
-  lastName  = "allen",
-  roleType  = "creator"
+## creators
+
+jon_allen <- gioseml::create_role(
+  lastName   = "allen",
+  firstName  = "jon",
+  dataSource = ds,
+  roleType   = "creator"
 )
 
-nancyGrimm <- gioseml::create_role(
-  firstName = "n",
-  lastName  = "grimm",
-  roleType  = "creator"
+nancy <- gioseml::create_role(
+  lastName   = "grimm",
+  firstName  = "n",
+  dataSource = ds,
+  roleType   = "creator"
 )
 
-sharonHall <- gioseml::create_role(
-  firstName = "shar",
-  lastName  = "hall",
-  roleType  = "creator"
+sharon <- gioseml::create_role(
+  lastName   = "hall",
+  firstName  = "shar",
+  dataSource = ds,
+  roleType   = "creator"
 )
 
-jasonKaye <- gioseml::create_role(
-  firstName = "jaso",
-  lastName  = "kaye",
-  roleType  = "creator"
+jason <- gioseml::create_role(
+  lastName   = "kaye",
+  firstName  = "jaso",
+  dataSource = ds,
+  roleType   = "creator"
 )
 
 creators <- list(
-  nancyGrimm,
-  sharonHall,
-  jasonKaye,
-  jonAllen
+  nancy,
+  sharon,
+  jason,
+  jon_allen
 )
 
 # metadata provider - required
 
-stevanEarl <- gioseml::create_role(
-  firstName = "s",
-  lastName  = "earl",
-  roleType  = "metadata"
+stevan <- gioseml::create_role(
+  lastName   = "earl",
+  firstName  = "s",
+  dataSource = ds,
+  roleType   = "metadata"
 )
 
-quincyStewart <- gioseml::create_role(
-  firstName = "q",
-  lastName  = "stewart",
-  roleType  = "metadata"
+quincy <- gioseml::create_role(
+  firstName  = "q",
+  lastName   = "stewart",
+  dataSource = ds,
+  roleType   = "metadata"
 )
 
-sallyWittlinger <- gioseml::create_role(
-  firstName = "s",
-  lastName  = "wittlinger",
-  roleType  = "metadata"
+sally <- gioseml::create_role(
+  lastName   = "wittlinger",
+  firstName  = "s",
+  dataSource = ds,
+  roleType   = "metadata"
 )
 
-kristinGodbeer <- gioseml::create_role(
-  firstName = "k",
-  lastName  = "godbeer",
-  roleType  = "metadata"
+kristan <- gioseml::create_role(
+  lastName   = "godbeer",
+  firstName  = "kristan",
+  dataSource = ds,
+  roleType   = "metadata"
 )
 
 metadataProvider <- list(
-  stevanEarl,
-  quincyStewart,
-  sallyWittlinger,
-  kristinGodbeer
+  stevan,
+  quincy,
+  sally,
+  kristan
 )
 
 ```
@@ -446,7 +456,7 @@ if (eval_status) {
 
 EDIutils::update_data_package(
   eml         = paste(scope, identifier, version, "xml", sep = "."),
-  useChecksum = FALSE,
+  useChecksum = TRUE,
   env         = "production"
 )
 
@@ -480,4 +490,3 @@ capeml::eml_to_amz(list.files(pattern = "knb.+xml"))
 file.copy(list.files(pattern = "knb.+xml"), "/home/srearl/localRepos/cap-metadata/cap-data-eml/")
 file.remove(list.files(pattern = "knb.+xml"))
 ```
-

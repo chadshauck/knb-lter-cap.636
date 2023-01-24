@@ -8,10 +8,19 @@ This repository features the workflow for publishing the 10-m tower data, docume
 - database details are in the [capmicromet-database](https://gitlab.com/caplter/capmicromet-database) repository
 - CAP LTER technicians should please annotate the `maintenance_log.csv` file in this repository with all maintenance activities relating to this project
 
+#### knb-lter-cap.636.12
+
+- data refresh
+- Rmd to qmd
+- add capeml::update_attributes() function to workflow for new data
+- new datasource for personnel metadata
+
+
 #### knb-lter-cap.636.10
 
 - split observations into approximately decadal intervals to address the large and increasingly unwieldy file size resulting from encapsulating all data into a single file
 - added disturbance to keyword list
+
 
 #### knb-lter-cap.636.9
 
