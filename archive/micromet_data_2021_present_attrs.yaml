@@ -1,74 +1,75 @@
 |
   timestamp:
     attributeName: timestamp
-    attributeDefinition: ''
+    attributeDefinition: date and time of observation
+    formatString: YYYY-MM-DD hh:mm:ss
     columnClasses: Date
-    formatString: YYYY-MM-DD
   site_code:
     attributeName: site_code
-    attributeDefinition: ''
+    attributeDefinition: study location
     columnClasses: factor
   replicate:
     attributeName: replicate
-    attributeDefinition: ''
-    unit: ''
+    attributeDefinition: number of observations from the same station with identical
+      timestamps but contrasting readings
+    unit: number
     numberType: natural
-    minimum: 1
-    maximum: 1
+    minimum: 1.0
+    maximum: 1.0
     columnClasses: numeric
   airtc_avg:
     attributeName: airtc_avg
-    attributeDefinition: ''
-    unit: ''
+    attributeDefinition: air temperature
+    unit: celsius
     numberType: real
     minimum: 0.047
     maximum: 46.61
     columnClasses: numeric
   rh:
     attributeName: rh
-    attributeDefinition: ''
-    unit: ''
+    attributeDefinition: relative humidity
+    unit: dimensionless
     numberType: real
-    minimum: 2.651
-    maximum: 100.0
+    minimum: 1.759
+    maximum: 109.6
     columnClasses: numeric
   slrkw_avg:
     attributeName: slrkw_avg
-    attributeDefinition: ''
-    unit: ''
+    attributeDefinition: average solar radiation
+    unit: kilowattPerMeterSquared
     numberType: real
     minimum: 0.0
-    maximum: 1.214
+    maximum: 1.228
     columnClasses: numeric
   slrmj_tot:
     attributeName: slrmj_tot
-    attributeDefinition: ''
-    unit: ''
+    attributeDefinition: total solar radiation
+    unit: megajoulePerMeterSquared
     numberType: real
     minimum: 0.0
-    maximum: 0.7282735
+    maximum: 0.736917
     columnClasses: numeric
   ws_ms_avg:
     attributeName: ws_ms_avg
-    attributeDefinition: ''
-    unit: ''
+    attributeDefinition: wind speed
+    unit: metersPerSecond
     numberType: real
     minimum: 0.0
     maximum: 13.95
     columnClasses: numeric
   winddir:
     attributeName: winddir
-    attributeDefinition: ''
-    unit: ''
+    attributeDefinition: wind direction
+    unit: degree
     numberType: real
     minimum: -2.498
     maximum: 354.6
     columnClasses: numeric
   rain_mm_tot:
     attributeName: rain_mm_tot
-    attributeDefinition: ''
-    unit: ''
+    attributeDefinition: precipitation
+    unit: millimeter
     numberType: real
     minimum: 0.0
-    maximum: 10.92
+    maximum: 23.88
     columnClasses: numeric

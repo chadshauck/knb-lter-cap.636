@@ -2,33 +2,52 @@
   timestamp:
     attributeName: timestamp
     attributeDefinition: date and time of observation
-    formatString: YYYY-MM-DD hh:mm:ss
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: Date
+    formatString: YYYY-MM-DD
   site_code:
     attributeName: site_code
     attributeDefinition: study location
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: factor
   replicate:
     attributeName: replicate
-    attributeDefinition: number of observations from the same station with identical
-      timestamps but contrasting readings
-    unit: number
+    attributeDefinition: number of observations from the same station with identical timestamps but contrasting readings
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: NUM
     numberType: natural
-    minimum: 1.0
-    maximum: 1.0
+    minimum: 1
+    maximum: 1
     columnClasses: numeric
   airtc_avg:
     attributeName: airtc_avg
     attributeDefinition: air temperature
-    unit: celsius
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: DEG_C
     numberType: real
-    minimum: 0.047
+    minimum: -1.822
     maximum: 46.61
     columnClasses: numeric
   rh:
     attributeName: rh
     attributeDefinition: relative humidity
-    unit: dimensionless
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: PERCENT
     numberType: real
     minimum: 1.759
     maximum: 109.6
@@ -36,31 +55,47 @@
   slrkw_avg:
     attributeName: slrkw_avg
     attributeDefinition: average solar radiation
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     unit: kilowattPerMeterSquared
     numberType: real
     minimum: 0.0
-    maximum: 1.228
+    maximum: 1.286
     columnClasses: numeric
   slrmj_tot:
     attributeName: slrmj_tot
     attributeDefinition: total solar radiation
-    unit: megajoulePerMeterSquared
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MegaJ-PER-M2
     numberType: real
     minimum: 0.0
-    maximum: 0.736917
+    maximum: 0.7715436
     columnClasses: numeric
   ws_ms_avg:
     attributeName: ws_ms_avg
     attributeDefinition: wind speed
-    unit: metersPerSecond
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: M-PER-SEC
     numberType: real
     minimum: 0.0
-    maximum: 13.95
+    maximum: 15.59
     columnClasses: numeric
   winddir:
     attributeName: winddir
     attributeDefinition: wind direction
-    unit: degree
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: DEG
     numberType: real
     minimum: -2.498
     maximum: 354.6
@@ -68,7 +103,11 @@
   rain_mm_tot:
     attributeName: rain_mm_tot
     attributeDefinition: precipitation
-    unit: millimeter
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MilliM
     numberType: real
     minimum: 0.0
     maximum: 23.88

@@ -1,0 +1,32 @@
+micromet_data_2021_present:
+  type: table
+  dfname: micromet_data_2021_present
+  description: "Micrometeorological data from the CAP LTER weather stations located at the Desert Botanical Garden and Lost Dutchman State Park, AZ, USA sites. Data are 10-min averages of measurements collected at 5-second intervals. Data collected 2021 through present."
+  dateRangeField: "~"
+  overwrite: TRUE
+  projectNaming: TRUE
+  missingValueCode: ~
+  additional_information: ~
+micromet_program_DBG:
+  type: other
+  target_file_or_directory: "tower_operation/CNDep_DBG_MetTower.CR1"
+  description: "data logger and sensor control program for Campbell data logger at the CAP LTER Desert Botanical Garden site"
+  overwrite: TRUE
+  projectNaming: TRUE
+  additional_information: "developed with Campbell Loggernet software"
+micromet_program_LDP:
+  type: other
+  target_file_or_directory: "tower_operation/CNDep_LDP_MetTower.CR1"
+  description: "data logger and sensor control program for Campbell data logger at the CAP LTER Lost Dutchman Park site"
+  overwrite: TRUE
+  projectNaming: TRUE
+  additional_information: "developed with Campbell Loggernet software"
+maintenance_log:
+  type: table
+  dfname: maintenance_log
+  description: "log of maintenance activity, especially sensor calibration and replacement, at the CAP LTER micromet towers"
+  dateRangeField: "date"
+  overwrite: TRUE
+  projectNaming: TRUE
+  missingValueCode: ~
+  additional_information: ~

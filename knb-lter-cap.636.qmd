@@ -1,13 +1,18 @@
 ---
-title: "capeml template"
-author: "information manager"
+title: "knb-lter-cap.636"
+author: "CAP LTER Information Manager"
 ---
 
 # micromet_data
 
-```{r micromet-data, eval=TRUE, warning=FALSE}
+```{r}
+#| label: micromet-data
+#| echo: FALSE
+#| eval: TRUE
+#| warning: TRUE
 
-micromet_data <- DBI::dbGetQuery(pg, "
+micromet_data <- DBI::dbGetQuery(
+  pg, "
   SELECT
     events.timestamp,
     sites.site_code,
@@ -34,56 +39,62 @@ dplyr::mutate(
 )
 
 names(micromet_data) <- tolower(names(micromet_data))
-
 ```
 
 # DT: micromet_data_2021_present
 
-```{r micromet-data-2021-present, eval=TRUE, warning=FALSE}
+```{r}
+#| label: micromet-data-2021-present
+#| echo: FALSE
+#| eval: TRUE
+#| warning: TRUE
 
 micromet_data_2021_present <- micromet_data |>
   dplyr::filter(timestamp >= "2021-01-01")
 
-# try({
-#   capeml::write_attributes(micromet_data_2021_present, overwrite = FALSE)
-#   capeml::write_factors(micromet_data_2021_present, overwrite = FALSE)
-# })
+try({
+  capeml::write_attributes(micromet_data_2021_present, overwrite = FALSE)
+  capeml::write_factors(micromet_data_2021_present, overwrite = FALSE)
+})
 
-capeml::update_attributes(micromet_data_2021_present)
+# capeml::update_attributes(micromet_data_2021_present)
 
-micromet_data_2021_present_desc <- "Micrometeorological data from the CAP LTER weather stations located at the Desert Botanical Garden and Lost Dutchman State Park, AZ, USA sites. Data are 10-min averages of measurements collected at 5-second intervals. Data collected 2021 through present."
+# micromet_data_2021_present_desc <- "Micrometeorological data from the CAP LTER weather stations located at the Desert Botanical Garden and Lost Dutchman State Park, AZ, USA sites. Data are 10-min averages of measurements collected at 5-second intervals. Data collected 2021 through present."
 
-micromet_data_2021_present_DT <- capeml::create_dataTable(
-  dfname         = micromet_data_2021_present,
-  description    = micromet_data_2021_present_desc,
-  dateRangeField = "timestamp",
-  overwrite      = FALSE
-)
-
+# micromet_data_2021_present_DT <- capeml::create_dataTable(
+#   dfname         = micromet_data_2021_present,
+#   description    = micromet_data_2021_present_desc,
+#   dateRangeField = "timestamp",
+#   overwrite      = FALSE
+# )
 ```
 
 
 # DT: micromet_data_2006_2010
 
-```{r micromet-data-2006-2010, eval=TRUE}
+```{r}
+#| label: micromet-data-2006-2010
+#| eval: TRUE
 
-micromet_data_2006_2010_DT <- capeml::harvest_dataTable("micromet_data_2006_2010_DT.xml")
-
+micromet_data_2006_2010_DT <- capeml::harvest_dataTable("data_2006_2010/micromet_data_2006_2010_DT.xml")
 ```
 
 
 # DT: micromet_data_2011_2020
 
-```{r micromet-data-2011-2020, eval=TRUE}
+```{r}
+#| label: micromet-data-2011-2020
+#| eval: TRUE
 
-micromet_data_2011_2020_DT <- capeml::harvest_dataTable("micromet_data_2011_2020_DT.xml")
-
+micromet_data_2011_2020_DT <- capeml::harvest_dataTable("data_2011_2020/micromet_data_2011_2020_DT.xml")
 ```
 
 
 # OE: micromet_program_DBG
 
-```{r micromet-program-DBG, eval=TRUE}
+```{r}
+#| label: micromet-program-DBG
+#| eval: TRUE
 
 micromet_program_DBG_desc       <- "data logger and sensor control program for Campbell data logger at the CAP LTER Desert Botanical Garden site"
 micromet_program_DBG_additional <- "developed with Campbell Loggernet software"
@@ -98,7 +109,9 @@ micromet_program_DBG_OE <- capeml::create_otherEntity(
 
 # OE: micromet_program_LDP
 
-```{r micromet-program-LDP, eval=TRUE}
+```{r}
+#| label: micromet-program-LDP
+#| eval: TRUE
 
 micromet_program_LDP_desc       <- "data logger and sensor control program for Campbell data logger at the CAP LTER Lost Dutchman Park site"
 micromet_program_LDP_additional <- "developed with Campbell Loggernet software"
@@ -113,7 +126,10 @@ micromet_program_LDP_OE <- capeml::create_otherEntity(
 
 # DT: maintenance_log
 
-```{r maintenance-log, eval=TRUE, error=TRUE}
+```{r}
+#| label: maintenance-log
+#| eval: TRUE
+#| error: TRUE
 
 maintenance_log <- readr::read_csv("maintenance_log.csv") |>
   dplyr::rename(site_code = site) |>
@@ -124,124 +140,26 @@ maintenance_log <- readr::read_csv("maintenance_log.csv") |>
 #   capeml::write_factors(maintenance_log, overwrite = FALSE)
 # })
 
-capeml::update_attributes(micromet_data_2021_present)
+# capeml::update_attributes(micromet_data_2021_present)
 
-maintenance_log_desc <- "log of maintenance activity, especially sensor calibration and replacement, at the CAP LTER micromet towers"
+# maintenance_log_desc <- "log of maintenance activity, especially sensor calibration and replacement, at the CAP LTER micromet towers"
 
-maintenance_log_DT <- capeml::create_dataTable(
-  dfname         = maintenance_log,
-  description    = maintenance_log_desc,
-  dateRangeField = "date",
-  overwrite      = FALSE,
-  projectNaming  = TRUE
-)
-
+# maintenance_log_DT <- capeml::create_dataTable(
+#   dfname         = maintenance_log,
+#   description    = maintenance_log_desc,
+#   dateRangeField = "date",
+#   overwrite      = FALSE,
+#   projectNaming  = TRUE
+# )
 ```
-
-
-# people
-
-See the gioseml package for examples of creating people resources from scratch.
-
-```{r people}
-
-ds <- "~/Dropbox/floating/cap_authors.csv"
-
-## creators
-
-jon_allen <- gioseml::create_role(
-  lastName   = "allen",
-  firstName  = "jon",
-  dataSource = ds,
-  roleType   = "creator"
-)
-
-nancy <- gioseml::create_role(
-  lastName   = "grimm",
-  firstName  = "n",
-  dataSource = ds,
-  roleType   = "creator"
-)
-
-sharon <- gioseml::create_role(
-  lastName   = "hall",
-  firstName  = "shar",
-  dataSource = ds,
-  roleType   = "creator"
-)
-
-jason <- gioseml::create_role(
-  lastName   = "kaye",
-  firstName  = "jaso",
-  dataSource = ds,
-  roleType   = "creator"
-)
-
-creators <- list(
-  nancy,
-  sharon,
-  jason,
-  jon_allen
-)
-
-# metadata provider - required
-
-stevan <- gioseml::create_role(
-  lastName   = "earl",
-  firstName  = "s",
-  dataSource = ds,
-  roleType   = "metadata"
-)
-
-quincy <- gioseml::create_role(
-  firstName  = "q",
-  lastName   = "stewart",
-  dataSource = ds,
-  roleType   = "metadata"
-)
-
-sally <- gioseml::create_role(
-  lastName   = "wittlinger",
-  firstName  = "s",
-  dataSource = ds,
-  roleType   = "metadata"
-)
-
-kristan <- gioseml::create_role(
-  lastName   = "godbeer",
-  firstName  = "kristan",
-  dataSource = ds,
-  roleType   = "metadata"
-)
-
-metadataProvider <- list(
-  stevan,
-  quincy,
-  sally,
-  kristan
-)
-
-```
-
-
-# keywords
-
-```{r keywords}
-
-write_keywords()
-```
-
-
-# methods
-
-Methods are automatically read from a `methods.md` file in the project
-directory. If more elaborate methods are required, e.g., to incorporate
-provenance, use the enhancedMethods approach.
 
 
 # coverages
 
-```{r coverages}
+```{r}
+#| label: coverages
+#| eval: TRUE
+#| error: TRUE
 
 # LDP geographic
 
@@ -296,34 +214,6 @@ coverage <- EML::eml$coverage(
     ),
   temporalCoverage = tower_temporal
 )
-
-```
-
-# custom units
-
-```{r custom-units, eval=TRUE}
-
-custom_units <- rbind(
-  data.frame(
-    id             = "kilowattPerMeterSquared",
-    unitType       = "irradiance",
-    parentSI       = "wattPerMeterSquared",
-    multiplierToSI = "1000",
-    description    = "average amount of energy per square meter of surface during the observation period"
-    ),
-  data.frame(
-    id             = "megajoulePerMeterSquared",
-    parentSI       = "joulePerMeterSquared",
-    unitType       = "irradiance",
-    multiplierToSI = "1000000",
-    description    = "total amount of energy per square meter of surface during the observation period")
-)
-
-unitList <- EML::set_unitList(
-  custom_units,
-  as_metadata = TRUE
-)
-
 ```
 
 
@@ -332,7 +222,10 @@ unitList <- EML::set_unitList(
 Optionally, provide: scope, abstract, methods, keywords, publication date.
 Projects scopes include lter (default), gios, urex, ltreb, and som.
 
-```{r construct-dataset}
+```{r}
+#| label: construct-dataset
+#| eval: TRUE
+#| error: TRUE
 
 dataset <- capeml::create_dataset()
 ```
@@ -340,17 +233,26 @@ dataset <- capeml::create_dataset()
 
 # eml
 
-```{r construct-eml, eval=TRUE}
+```{r}
+#| label: construct-eml
+#| eval: TRUE
+#| error: TRUE
 
 eml <- capeml::create_eml()
 ```
 
-```{r validate-eml, eval=TRUE}
+```{r}
+#| label: validate-eml
+#| eval: TRUE
+#| error: TRUE
 
 EML::eml_validate(eml)
 ```
 
-```{r eml-to-file, eval=TRUE}
+```{r}
+#| label: eml-to-file
+#| eval: TRUE
+#| error: TRUE
 
 capeml::write_cap_eml()
 ```
@@ -358,117 +260,71 @@ capeml::write_cap_eml()
 
 # file placement: data files
 
-## read package details
+```{r}
+#| label: upload-data-S3
+#| eval: TRUE
+#| error: TRUE
 
-```{r package-details, eval=TRUE}
-
-# retrieve package details from config.yaml
-if (!file.exists("config.yaml")) {
-  stop("config.yaml not found")
-}
-package_configs <- capeml::read_package_configuration()
-identifier      <- package_configs$identifier
-scope           <- package_configs$scope
-
-version <- capeml::get_next_version(
-  provided_scope      = scope,
-  provided_identifier = identifier
-)
-```
-
-## preview data files upload
-
-```{r preview-data-file-to-upload}
-
-list.files(pattern = paste0(identifier, "_"))
-```
-
-## source AWS S3 settings
-
-```{r S3-helper-functions}
-
-# library(aws.s3)
 source("~/Documents/localSettings/aws.s3")
-```
-
-## upload data files to S3
-
-```{r upload-data-S3}
-
-lapply(list.files(pattern = paste0(identifier, "_")), capeml::data_to_amz)
+lapply(c("636_micromet_data_2021_present.csv", "636_maintenance_log.csv"), capeml::data_to_amz)
 ```
 
 
 # EDI
 
-## EDI: login
+## login
 
-```{r edi-login, eval=TRUE, echo=TRUE, message=TRUE}
+```{r}
+#| label: edi-login
+#| eval: TRUE
+#| error: TRUE
   
-EDIutils::login(
-  userId   = keyring::key_get("edi_user", keyring = "edi"),
-  userPass = keyring::key_get("edi_pass", keyring = "edi")
-)
-
+source("~/Documents/localSettings/edi.R")
 ```
 
-## EDI: evaluate
+## package report (short)
 
-```{r edi-evaluate, eval=TRUE, echo=TRUE, message=TRUE}
+```{r}
+#| label: package report (short)
+#| eval: TRUE
+#| error: TRUE
+  
+capeml::get_package_evaluation(full_report = FALSE)
+```
 
-evaluation <- EDIutils::evaluate_data_package(
-  eml         = paste(scope, identifier, version, "xml", sep = "."),
-  useChecksum = FALSE,
-  env         = "staging"
+## package report (full)
+
+```{r}
+#| label: package report (full)
+#| eval: FALSE
+#| error: TRUE
+  
+report <- capeml::get_package_evaluation(full_report = TRUE)
+xml2::write_xml(report, "/tmp/report.xml")
+```
+
+## update
+
+```{r}
+#| label: update
+#| eval: TRUE
+#| error: TRUE
+
+capeml::create_package(
+  environment = "staging",
+  update      = TRUE
 )
-
-Sys.sleep(8)
-
-eval_status <- EDIutils::check_status_evaluate(
-  transaction = evaluation,
-  env         = "staging"
-)
-
-if (eval_status) {
-
-  # evaluation summary
-
-  EDIutils::read_evaluate_report_summary(
-    transaction = evaluation,
-    env         = "staging"
-  )
-
-}
-
-# evaluation detailed
-
-# EDIutils::read_evaluate_report(
-#   transaction = evaluation,
-#   env         = "staging"
-# )
-
 ```
 
 
-## EDI: update
+## logout
 
-```{r update, eval=TRUE, echo=TRUE, message=TRUE}
-
-EDIutils::update_data_package(
-  eml         = paste(scope, identifier, version, "xml", sep = "."),
-  useChecksum = TRUE,
-  env         = "production"
-)
-
-```
-
-
-## EDI: logout
-
-```{r edi-logout, eval=TRUE, echo=TRUE, message=TRUE}
+```{r}
+#| label: edi-logout
+#| eval: TRUE
+#| error: TRUE
 
 EDIutils::logout()
-
 ```
 
 

@@ -1,8 +1,0 @@
-|
-  - attribute:
-      attributeName: site_code
-      levels:
-      - code: DBG
-        definition: "Desert Botanical Garden"
-      - code: LDP
-        definition: "Lost Dutchman State Park"
