@@ -1,6 +1,6 @@
 scope: knb-lter-cap
 identifier: 636
-baseURL: https://data.gios.asu.edu/datasets/cap/
+baseURL: https://gios-data.s3.us-west-2.amazonaws.com/datasets/cap/
 project: lter
 title: "CAP LTER weather stations at Papago Park and Lost Dutchman State Park in the greater Phoenix metropolitan area of central Arizona, USA, ongoing since 2010"
 maintenance: regular

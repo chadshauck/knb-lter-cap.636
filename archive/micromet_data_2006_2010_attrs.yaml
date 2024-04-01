@@ -2,23 +2,39 @@
   timestamp:
     attributeName: timestamp
     attributeDefinition: ''
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: Date
     formatString: YYYY-MM-DD
   site_code:
     attributeName: site_code
     attributeDefinition: ''
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     columnClasses: factor
   replicate:
     attributeName: replicate
     attributeDefinition: ''
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     unit: ''
     numberType: natural
-    minimum: 1
-    maximum: 1
+    minimum: .inf
+    maximum: -.inf
     columnClasses: numeric
   airtc_avg:
     attributeName: airtc_avg
     attributeDefinition: ''
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     unit: ''
     numberType: real
     minimum: -41.62
@@ -27,6 +43,10 @@
   rh:
     attributeName: rh
     attributeDefinition: ''
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     unit: ''
     numberType: real
     minimum: 0.0
@@ -35,6 +55,10 @@
   slrkw_avg:
     attributeName: slrkw_avg
     attributeDefinition: ''
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     unit: ''
     numberType: real
     minimum: 0.0
@@ -43,6 +67,10 @@
   slrmj_tot:
     attributeName: slrmj_tot
     attributeDefinition: ''
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     unit: ''
     numberType: real
     minimum: 0.0
@@ -51,6 +79,10 @@
   ws_ms_avg:
     attributeName: ws_ms_avg
     attributeDefinition: ''
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     unit: ''
     numberType: real
     minimum: 0.0
@@ -59,6 +91,10 @@
   winddir:
     attributeName: winddir
     attributeDefinition: ''
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     unit: ''
     numberType: real
     minimum: -4.216
@@ -67,6 +103,10 @@
   rain_mm_tot:
     attributeName: rain_mm_tot
     attributeDefinition: ''
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
     unit: ''
     numberType: real
     minimum: 0.0

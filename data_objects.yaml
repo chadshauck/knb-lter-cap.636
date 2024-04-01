@@ -7,6 +7,24 @@ micromet_data_2021_present:
   projectNaming: TRUE
   missingValueCode: ~
   additional_information: ~
+micromet_data_2011_2020:
+  type: table
+  dfname: micromet_data_2011_2020
+  description: "Micrometeorological data from the CAP LTER weather stations located at the Desert Botanical Garden and Lost Dutchman State Park, AZ, USA sites. Data are 10-min averages of measurements collected at 5-second intervals. Data collected 2011 through 2020."
+  dateRangeField: "~"
+  overwrite: TRUE
+  projectNaming: TRUE
+  missingValueCode: ~
+  additional_information: ~
+micromet_data_2006_2010:
+  type: table
+  dfname: micromet_data_2006_2010
+  description: "Micrometeorological data from the CAP LTER weather stations located at the Desert Botanical Garden and Lost Dutchman State Park, AZ, USA sites. Data are 10-min averages of measurements collected at 5-second intervals. Data collected 2006 through 2010."
+  dateRangeField: "~"
+  overwrite: TRUE
+  projectNaming: TRUE
+  missingValueCode: ~
+  additional_information: ~
 micromet_program_DBG:
   type: other
   target_file_or_directory: "tower_operation/CNDep_DBG_MetTower.CR1"

@@ -24,8 +24,8 @@ micromet_data <- DBI::dbGetQuery(
   JOIN micromet.observations ON (observations.event_id = events.id)
   JOIN micromet.variables ON (variables.id = observations.variable_id)
   JOIN micromet.sites ON (sites.id = events.site_id)
-  WHERE
-    timestamp >= '2021-01-01'
+  -- WHERE
+  --   timestamp >= '2021-01-01'
   ;
   ")
 
@@ -58,15 +58,6 @@ try({
 })
 
 # capeml::update_attributes(micromet_data_2021_present)
-
-# micromet_data_2021_present_desc <- "Micrometeorological data from the CAP LTER weather stations located at the Desert Botanical Garden and Lost Dutchman State Park, AZ, USA sites. Data are 10-min averages of measurements collected at 5-second intervals. Data collected 2021 through present."
-
-# micromet_data_2021_present_DT <- capeml::create_dataTable(
-#   dfname         = micromet_data_2021_present,
-#   description    = micromet_data_2021_present_desc,
-#   dateRangeField = "timestamp",
-#   overwrite      = FALSE
-# )
 ```
 
 
@@ -74,9 +65,21 @@ try({
 
 ```{r}
 #| label: micromet-data-2006-2010
+#| echo: FALSE
 #| eval: TRUE
+#| warning: TRUE
 
-micromet_data_2006_2010_DT <- capeml::harvest_dataTable("data_2006_2010/micromet_data_2006_2010_DT.xml")
+micromet_data_2006_2010 <- micromet_data |>
+  dplyr::filter(timestamp <= "2010-12-31")
+
+try({
+  capeml::write_attributes(micromet_data_2006_2010, overwrite = FALSE)
+  capeml::write_factors(micromet_data_2006_2010, overwrite = FALSE)
+})
+
+# capeml::update_attributes(micromet_data_2006_2010)
+
+# micromet_data_2006_2010_DT <- capeml::harvest_dataTable("data_2006_2010/micromet_data_2006_2010_DT.xml")
 ```
 
 
@@ -84,9 +87,19 @@ micromet_data_2006_2010_DT <- capeml::harvest_dataTable("data_2006_2010/micromet
 
 ```{r}
 #| label: micromet-data-2011-2020
+#| echo: FALSE
 #| eval: TRUE
+#| warning: TRUE
 
-micromet_data_2011_2020_DT <- capeml::harvest_dataTable("data_2011_2020/micromet_data_2011_2020_DT.xml")
+micromet_data_2011_2020 <- micromet_data |>
+  dplyr::filter(timestamp >= "2011-01-01" & timestamp <= "2020-12-31")
+
+try({
+  capeml::write_attributes(micromet_data_2011_2020, overwrite = FALSE)
+  capeml::write_factors(micromet_data_2011_2020, overwrite = FALSE)
+})
+
+# micromet_data_2011_2020_DT <- capeml::harvest_dataTable("data_2011_2020/micromet_data_2011_2020_DT.xml")
 ```
 
 
@@ -266,7 +279,7 @@ capeml::write_cap_eml()
 #| error: TRUE
 
 source("~/Documents/localSettings/aws.s3")
-lapply(c("636_micromet_data_2021_present.csv", "636_maintenance_log.csv"), capeml::data_to_amz)
+lapply(c(list.files(pattern = "^636.+csv$")), capeml::data_to_amz)
 ```
 
 
@@ -311,7 +324,7 @@ xml2::write_xml(report, "/tmp/report.xml")
 #| error: TRUE
 
 capeml::create_package(
-  environment = "staging",
+  environment = "development",
   update      = TRUE
 )
 ```
@@ -330,19 +343,23 @@ EDIutils::logout()
 
 # post processing
 
-remove data files (if desired)
+remove data files (these are big files!)
 
-```{r delete-data-files}
+```{r}
+#| label: delete-data-files
+#| eval: TRUE
+#| error: TRUE
 
-dataFilesToRemove <- dir(pattern = paste0(identifier, "_"))
-file.remove(dataFilesToRemove)
+file.remove(c(list.files(pattern = "^636.+csv$")))
 ```
 
-XML/EML file to Amazon and cap-metadata
+EML file to Amazon and cap-metadata
 
-```{r delete-data-files}
+```{r}
+#| label: copy-data-files
+#| eval: TRUE
+#| error: TRUE
+
 capeml::eml_to_amz(list.files(pattern = "knb.+xml"))
-
 file.copy(list.files(pattern = "knb.+xml"), "/home/srearl/localRepos/cap-metadata/cap-data-eml/")
-file.remove(list.files(pattern = "knb.+xml"))
 ```

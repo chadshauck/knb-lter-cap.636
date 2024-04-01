@@ -1,0 +1,112 @@
+|
+  timestamp:
+    attributeName: timestamp
+    attributeDefinition: date and time of observation
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    columnClasses: Date
+    formatString: YYYY-MM-DD
+  site_code:
+    attributeName: site_code
+    attributeDefinition: study location
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    columnClasses: factor
+  replicate:
+    attributeName: replicate
+    attributeDefinition: number of observations from the same station with identical timestamps but contrasting readings
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: NUM
+    numberType: natural
+    columnClasses: numeric
+  airtc_avg:
+    attributeName: airtc_avg
+    attributeDefinition: air temperature
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: DEG_C
+    numberType: real
+    minimum: -41.62
+    maximum: 45.2
+    columnClasses: numeric
+  rh:
+    attributeName: rh
+    attributeDefinition: relative humidity
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: PERCENT
+    numberType: real
+    minimum: 0.0
+    maximum: 100.0
+    columnClasses: numeric
+  slrkw_avg:
+    attributeName: slrkw_avg
+    attributeDefinition: average solar radiation
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: kilowattPerMeterSquared
+    numberType: real
+    minimum: 0.0
+    maximum: 1.281
+    columnClasses: numeric
+  slrmj_tot:
+    attributeName: slrmj_tot
+    attributeDefinition: total solar radiation
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MegaJ-PER-M2
+    numberType: real
+    minimum: 0.0
+    maximum: 0.7685283
+    columnClasses: numeric
+  ws_ms_avg:
+    attributeName: ws_ms_avg
+    attributeDefinition: wind speed
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: M-PER-SEC
+    numberType: real
+    minimum: 0.0
+    maximum: 14.29
+    columnClasses: numeric
+  winddir:
+    attributeName: winddir
+    attributeDefinition: wind direction
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: DEG
+    numberType: real
+    minimum: -4.216
+    maximum: 355.0
+    columnClasses: numeric
+  rain_mm_tot:
+    attributeName: rain_mm_tot
+    attributeDefinition: precipitation
+    propertyURI: ''
+    propertyLabel: ''
+    valueURI: ''
+    valueLabel: ''
+    unit: MilliM
+    numberType: real
+    minimum: 0.0
+    maximum: 14.99
+    columnClasses: numeric
