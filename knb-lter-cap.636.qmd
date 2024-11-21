@@ -52,34 +52,12 @@ names(micromet_data) <- tolower(names(micromet_data))
 micromet_data_2021_present <- micromet_data |>
   dplyr::filter(timestamp >= "2021-01-01")
 
-try({
-  capeml::write_attributes(micromet_data_2021_present, overwrite = FALSE)
-  capeml::write_factors(micromet_data_2021_present, overwrite = FALSE)
-})
+# try({
+#   capeml::write_attributes(micromet_data_2021_present, overwrite = FALSE)
+#   capeml::write_factors(micromet_data_2021_present, overwrite = FALSE)
+# })
 
 # capeml::update_attributes(micromet_data_2021_present)
-```
-
-
-# DT: micromet_data_2006_2010
-
-```{r}
-#| label: micromet-data-2006-2010
-#| echo: FALSE
-#| eval: TRUE
-#| warning: TRUE
-
-micromet_data_2006_2010 <- micromet_data |>
-  dplyr::filter(timestamp <= "2010-12-31")
-
-try({
-  capeml::write_attributes(micromet_data_2006_2010, overwrite = FALSE)
-  capeml::write_factors(micromet_data_2006_2010, overwrite = FALSE)
-})
-
-# capeml::update_attributes(micromet_data_2006_2010)
-
-# micromet_data_2006_2010_DT <- capeml::harvest_dataTable("data_2006_2010/micromet_data_2006_2010_DT.xml")
 ```
 
 
@@ -94,12 +72,34 @@ try({
 micromet_data_2011_2020 <- micromet_data |>
   dplyr::filter(timestamp >= "2011-01-01" & timestamp <= "2020-12-31")
 
-try({
-  capeml::write_attributes(micromet_data_2011_2020, overwrite = FALSE)
-  capeml::write_factors(micromet_data_2011_2020, overwrite = FALSE)
-})
+# try({
+#   capeml::write_attributes(micromet_data_2011_2020, overwrite = FALSE)
+#   capeml::write_factors(micromet_data_2011_2020, overwrite = FALSE)
+# })
 
 # micromet_data_2011_2020_DT <- capeml::harvest_dataTable("data_2011_2020/micromet_data_2011_2020_DT.xml")
+```
+
+
+# DT: micromet_data_2006_2010
+
+```{r}
+#| label: micromet-data-2006-2010
+#| echo: FALSE
+#| eval: TRUE
+#| warning: TRUE
+
+micromet_data_2006_2010 <- micromet_data |>
+  dplyr::filter(timestamp <= "2010-12-31")
+
+# try({
+#   capeml::write_attributes(micromet_data_2006_2010, overwrite = FALSE)
+#   capeml::write_factors(micromet_data_2006_2010, overwrite = FALSE)
+# })
+
+# capeml::update_attributes(micromet_data_2006_2010)
+
+# micromet_data_2006_2010_DT <- capeml::harvest_dataTable("data_2006_2010/micromet_data_2006_2010_DT.xml")
 ```
 
 
@@ -324,7 +324,7 @@ xml2::write_xml(report, "/tmp/report.xml")
 #| error: TRUE
 
 capeml::create_package(
-  environment = "development",
+  environment = "production",
   update      = TRUE
 )
 ```

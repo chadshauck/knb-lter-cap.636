@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<eml:eml xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.2" packageId="knb-lter-cap.636.13" scope="system" system="knb" xsi:schemaLocation="https://eml.ecoinformatics.org/eml-2.2.0 https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd">
+<eml:eml xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.2" packageId="knb-lter-cap.636.14" scope="system" system="knb" xsi:schemaLocation="https://eml.ecoinformatics.org/eml-2.2.0 https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd">
   <access authSystem="knb" order="allowFirst" scope="document">
     <allow>
       <principal>uid=CAP,o=EDI,dc=edirepository,dc=org</principal>
@@ -85,7 +85,7 @@
       <electronicMailAddress>Kristan.Godbeer@asu.edu</electronicMailAddress>
       <userId directory="https://orcid.org"/>
     </metadataProvider>
-    <pubDate>2024-04-01</pubDate>
+    <pubDate>2024-11-21</pubDate>
     <language>english</language>
     <abstract>
       <markdown>
@@ -158,7 +158,7 @@ The CAP LTER maintains two micrometeorological stations (10-m height) in the gre
             <calendarDate>2006-05-10</calendarDate>
           </beginDate>
           <endDate>
-            <calendarDate>2023-12-14</calendarDate>
+            <calendarDate>2024-11-07</calendarDate>
           </endDate>
         </rangeOfDates>
       </temporalCoverage>
@@ -305,7 +305,14 @@ Data are downloaded manually at approximately monthly intervals.
         <userId directory="https://orcid.org">0000-0002-2313-9262</userId>
         <role>Co-principal Investigator</role>
       </personnel>
-      <abstract>Phase IV of the Central Arizona-Phoenix LTER (CAP) continues to focus on the question: How do the ecosystem services provided by urban ecological infrastructure (UEI) affect human outcomes and behavior, and how do human actions affect patterns of urban ecosystem structure and function and, ultimately, urban sustainability and resilience? The overarching goal is to foster social-ecological urban research aimed at understanding these complex systems using a holistic, ecology of cities perspective while contributing to an ecology for cities that enhances urban sustainability and resilience. This goal is being met through four broad programmatic objectives: (1) use long-term observations and datasets to articulate and answer new questions requiring a long-term perspective; (2) develop and use predictive models and future-looking scenarios to help answer research questions; (3) employ existing urban ecological theory while articulating new theory; and (4) build transdisciplinary partnerships to foster resilience and enhance sustainability in urban ecosystems while educating urban dwellers of all ages and experiences. CAP IV research is organized around eight interdisciplinary questions and ten long-term datasets and experiments, and researchers are organized into eight Interdisciplinary Research Themes to pursue these long-term research questions.</abstract>
+      <abstract>Humankind is increasingly an urban species and urban ecosystems are therefore profoundly important. Cities are concentrated consumers of energy and resources and producers of various wastes, but they are also centers of social networks, innovation, efficiency, and solutions. The Central Arizona?Phoenix Long Term Ecological Research program (CAP V) is a research project that includes scientists from a variety of disciplines focused on understanding cities as hybrid ecosystems including both environmental and human components, and their interactions. Understanding urban ecosystems remains the central focus of CAP V after 25 years of innovative research. The interconnectedness of human motivation, behavior, actions, and outcomes with urban ecosystem structure and function leads to a fundamental question addressed by this project. How have/are human-environment interactions mediated by urban ecological infrastructure to shape past, present, and future ecosystem functions? This project will further indicate how we can use knowledge of these relationships to inform more just, transformative, and sustainable futures. Broader societal impacts are intentionally integrated in CAP V research, with many activities involving explicit partnerships with practitioners and communities that historically have had little voice in the future of their city and environment. This work forms a translational link among social-ecological research outcomes, city institutions, and communities with the goal of ultimately making Phoenix, and cities in general, better and more sustainable places to live.
+
+  CAP research will extend its focus on the theory of Urban Ecological Infrastructure (UEI) as a critical bridge between the system?s biophysical and human/social domains. CAP researchers will continue to explore interdisciplinary urban ecology in residential landscapes, urban waterbodies, desert parks and preserves, while examining the plants, animals, climate, urban design and governance across the metropolitan Phoenix region. New research initiatives will include a focus on environmental justice and equity, as well as urban air quality. The research will develop both knowledge and solutions in underserved and historically neglected communities, including local Indigenous communities. CAP V research is organized around five interdisciplinary areas: 1) ecosystem structure and function and biogeochemical cycling; 2) adaptation and eco-evolutionary dynamics; 3) urban climate, and air quality; 4) urban nature and human perceptions, decisions, and wellbeing; and 5) environmental justice, governance, and transformative futures. Investigating these questions, in the context of the previous 25 years of CAP research, will guide the CAP research endeavor towards more sustainable and resilient futures for U.S. cities and for our increasingly urban society.
+
+  This award is jointly funded by the Division of Environmental Biology and the Division of Behavioral and Cognitive Sciences.
+
+  This award reflects NSF's statutory mission and has been deemed worthy of support through evaluation using the Foundation's intellectual merit and broader impacts review criteria.
+  </abstract>
       <funding>NSF Awards: CAP I: DEB-9714833, CAP II: DEB-0423704, CAP III: DEB-1026865, CAP IV: DEB-1832016, CAP V: DEB-2224662</funding>
       <award>
         <funderName>National Science Foundation</funderName>
@@ -320,8 +327,8 @@ Data are downloaded manually at approximately monthly intervals.
       <entityDescription>Micrometeorological data from the CAP LTER weather stations located at the Desert Botanical Garden and Lost Dutchman State Park, AZ, USA sites. Data are 10-min averages of measurements collected at 5-second intervals. Data collected 2021 through present.</entityDescription>
       <physical>
         <objectName>636_micromet_data_2021_present.csv</objectName>
-        <size unit="bytes">18253124</size>
-        <authentication method="MD5">7743e29505fd40a2ce27c96c96b75c60</authentication>
+        <size unit="bytes">120903832</size>
+        <authentication method="MD5">4391bffa369fb0e217f714870f911924</authentication>
         <dataFormat>
           <externallyDefinedFormat>
             <formatName>Comma Separated Values Text</formatName>
@@ -334,7 +341,7 @@ Data are downloaded manually at approximately monthly intervals.
         </distribution>
       </physical>
       <attributeList>
-        <attribute id="7743e29505fd40a2ce27c96c96b75c60_1">
+        <attribute id="4391bffa369fb0e217f714870f911924_1">
           <attributeName>timestamp</attributeName>
           <attributeDefinition>date and time of observation</attributeDefinition>
           <storageType>date</storageType>
@@ -345,7 +352,7 @@ Data are downloaded manually at approximately monthly intervals.
             </dateTime>
           </measurementScale>
         </attribute>
-        <attribute id="7743e29505fd40a2ce27c96c96b75c60_2">
+        <attribute id="4391bffa369fb0e217f714870f911924_2">
           <attributeName>site_code</attributeName>
           <attributeDefinition>study location</attributeDefinition>
           <storageType>string</storageType>
@@ -366,7 +373,7 @@ Data are downloaded manually at approximately monthly intervals.
             </nominal>
           </measurementScale>
         </attribute>
-        <attribute id="7743e29505fd40a2ce27c96c96b75c60_3">
+        <attribute id="4391bffa369fb0e217f714870f911924_3">
           <attributeName>replicate</attributeName>
           <attributeDefinition>number of observations from the same station with identical timestamps but contrasting readings</attributeDefinition>
           <storageType>float</storageType>
@@ -385,7 +392,7 @@ Data are downloaded manually at approximately monthly intervals.
             </ratio>
           </measurementScale>
         </attribute>
-        <attribute id="7743e29505fd40a2ce27c96c96b75c60_4">
+        <attribute id="4391bffa369fb0e217f714870f911924_4">
           <attributeName>airtc_avg</attributeName>
           <attributeDefinition>air temperature</attributeDefinition>
           <storageType>float</storageType>
@@ -403,12 +410,8 @@ Data are downloaded manually at approximately monthly intervals.
               </numericDomain>
             </ratio>
           </measurementScale>
-          <missingValueCode>
-            <code>NA</code>
-            <codeExplanation>missing value</codeExplanation>
-          </missingValueCode>
         </attribute>
-        <attribute id="7743e29505fd40a2ce27c96c96b75c60_5">
+        <attribute id="4391bffa369fb0e217f714870f911924_5">
           <attributeName>rh</attributeName>
           <attributeDefinition>relative humidity</attributeDefinition>
           <storageType>float</storageType>
@@ -426,12 +429,8 @@ Data are downloaded manually at approximately monthly intervals.
               </numericDomain>
             </ratio>
           </measurementScale>
-          <missingValueCode>
-            <code>NA</code>
-            <codeExplanation>missing value</codeExplanation>
-          </missingValueCode>
         </attribute>
-        <attribute id="7743e29505fd40a2ce27c96c96b75c60_6">
+        <attribute id="4391bffa369fb0e217f714870f911924_6">
           <attributeName>slrkw_avg</attributeName>
           <attributeDefinition>average solar radiation</attributeDefinition>
           <storageType>float</storageType>
@@ -449,12 +448,8 @@ Data are downloaded manually at approximately monthly intervals.
               </numericDomain>
             </ratio>
           </measurementScale>
-          <missingValueCode>
-            <code>NA</code>
-            <codeExplanation>missing value</codeExplanation>
-          </missingValueCode>
         </attribute>
-        <attribute id="7743e29505fd40a2ce27c96c96b75c60_7">
+        <attribute id="4391bffa369fb0e217f714870f911924_7">
           <attributeName>slrmj_tot</attributeName>
           <attributeDefinition>total solar radiation</attributeDefinition>
           <storageType>float</storageType>
@@ -472,12 +467,8 @@ Data are downloaded manually at approximately monthly intervals.
               </numericDomain>
             </ratio>
           </measurementScale>
-          <missingValueCode>
-            <code>NA</code>
-            <codeExplanation>missing value</codeExplanation>
-          </missingValueCode>
         </attribute>
-        <attribute id="7743e29505fd40a2ce27c96c96b75c60_8">
+        <attribute id="4391bffa369fb0e217f714870f911924_8">
           <attributeName>ws_ms_avg</attributeName>
           <attributeDefinition>wind speed</attributeDefinition>
           <storageType>float</storageType>
@@ -490,13 +481,13 @@ Data are downloaded manually at approximately monthly intervals.
                 <numberType>real</numberType>
                 <bounds>
                   <minimum exclusive="false">0</minimum>
-                  <maximum exclusive="false">15.59</maximum>
+                  <maximum exclusive="false">16.45</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
           </measurementScale>
         </attribute>
-        <attribute id="7743e29505fd40a2ce27c96c96b75c60_9">
+        <attribute id="4391bffa369fb0e217f714870f911924_9">
           <attributeName>winddir</attributeName>
           <attributeDefinition>wind direction</attributeDefinition>
           <storageType>float</storageType>
@@ -514,12 +505,8 @@ Data are downloaded manually at approximately monthly intervals.
               </numericDomain>
             </ratio>
           </measurementScale>
-          <missingValueCode>
-            <code>NA</code>
-            <codeExplanation>missing value</codeExplanation>
-          </missingValueCode>
         </attribute>
-        <attribute id="7743e29505fd40a2ce27c96c96b75c60_10">
+        <attribute id="4391bffa369fb0e217f714870f911924_10">
           <attributeName>rain_mm_tot</attributeName>
           <attributeDefinition>precipitation</attributeDefinition>
           <storageType>float</storageType>
@@ -539,15 +526,15 @@ Data are downloaded manually at approximately monthly intervals.
           </measurementScale>
         </attribute>
       </attributeList>
-      <numberOfRecords>279923</numberOfRecords>
+      <numberOfRecords>2679237</numberOfRecords>
     </dataTable>
     <dataTable id="636_micromet_data_2011_2020.csv">
       <entityName>636_micromet_data_2011_2020.csv</entityName>
       <entityDescription>Micrometeorological data from the CAP LTER weather stations located at the Desert Botanical Garden and Lost Dutchman State Park, AZ, USA sites. Data are 10-min averages of measurements collected at 5-second intervals. Data collected 2011 through 2020.</entityDescription>
       <physical>
         <objectName>636_micromet_data_2011_2020.csv</objectName>
-        <size unit="bytes">66283471</size>
-        <authentication method="MD5">5add93e77e6c2a84468094c7975e0965</authentication>
+        <size unit="bytes">324176545</size>
+        <authentication method="MD5">cd6ea4e175011cd1140975ec263c5f77</authentication>
         <dataFormat>
           <externallyDefinedFormat>
             <formatName>Comma Separated Values Text</formatName>
@@ -560,7 +547,7 @@ Data are downloaded manually at approximately monthly intervals.
         </distribution>
       </physical>
       <attributeList>
-        <attribute id="5add93e77e6c2a84468094c7975e0965_1">
+        <attribute id="cd6ea4e175011cd1140975ec263c5f77_1">
           <attributeName>timestamp</attributeName>
           <attributeDefinition>date and time of observation</attributeDefinition>
           <storageType>date</storageType>
@@ -571,7 +558,7 @@ Data are downloaded manually at approximately monthly intervals.
             </dateTime>
           </measurementScale>
         </attribute>
-        <attribute id="5add93e77e6c2a84468094c7975e0965_2">
+        <attribute id="cd6ea4e175011cd1140975ec263c5f77_2">
           <attributeName>site_code</attributeName>
           <attributeDefinition>study location</attributeDefinition>
           <storageType>string</storageType>
@@ -592,7 +579,7 @@ Data are downloaded manually at approximately monthly intervals.
             </nominal>
           </measurementScale>
         </attribute>
-        <attribute id="5add93e77e6c2a84468094c7975e0965_3">
+        <attribute id="cd6ea4e175011cd1140975ec263c5f77_3">
           <attributeName>replicate</attributeName>
           <attributeDefinition>number of observations from the same station with identical timestamps but contrasting readings</attributeDefinition>
           <storageType>float</storageType>
@@ -615,7 +602,7 @@ Data are downloaded manually at approximately monthly intervals.
             <codeExplanation>missing value</codeExplanation>
           </missingValueCode>
         </attribute>
-        <attribute id="5add93e77e6c2a84468094c7975e0965_4">
+        <attribute id="cd6ea4e175011cd1140975ec263c5f77_4">
           <attributeName>airtc_avg</attributeName>
           <attributeDefinition>air temperature</attributeDefinition>
           <storageType>float</storageType>
@@ -633,12 +620,8 @@ Data are downloaded manually at approximately monthly intervals.
               </numericDomain>
             </ratio>
           </measurementScale>
-          <missingValueCode>
-            <code>NA</code>
-            <codeExplanation>missing value</codeExplanation>
-          </missingValueCode>
         </attribute>
-        <attribute id="5add93e77e6c2a84468094c7975e0965_5">
+        <attribute id="cd6ea4e175011cd1140975ec263c5f77_5">
           <attributeName>rh</attributeName>
           <attributeDefinition>relative humidity</attributeDefinition>
           <storageType>float</storageType>
@@ -656,12 +639,8 @@ Data are downloaded manually at approximately monthly intervals.
               </numericDomain>
             </ratio>
           </measurementScale>
-          <missingValueCode>
-            <code>NA</code>
-            <codeExplanation>missing value</codeExplanation>
-          </missingValueCode>
         </attribute>
-        <attribute id="5add93e77e6c2a84468094c7975e0965_6">
+        <attribute id="cd6ea4e175011cd1140975ec263c5f77_6">
           <attributeName>slrkw_avg</attributeName>
           <attributeDefinition>average solar radiation</attributeDefinition>
           <storageType>float</storageType>
@@ -679,12 +658,8 @@ Data are downloaded manually at approximately monthly intervals.
               </numericDomain>
             </ratio>
           </measurementScale>
-          <missingValueCode>
-            <code>NA</code>
-            <codeExplanation>missing value</codeExplanation>
-          </missingValueCode>
         </attribute>
-        <attribute id="5add93e77e6c2a84468094c7975e0965_7">
+        <attribute id="cd6ea4e175011cd1140975ec263c5f77_7">
           <attributeName>slrmj_tot</attributeName>
           <attributeDefinition>total solar radiation</attributeDefinition>
           <storageType>float</storageType>
@@ -702,12 +677,8 @@ Data are downloaded manually at approximately monthly intervals.
               </numericDomain>
             </ratio>
           </measurementScale>
-          <missingValueCode>
-            <code>NA</code>
-            <codeExplanation>missing value</codeExplanation>
-          </missingValueCode>
         </attribute>
-        <attribute id="5add93e77e6c2a84468094c7975e0965_8">
+        <attribute id="cd6ea4e175011cd1140975ec263c5f77_8">
           <attributeName>ws_ms_avg</attributeName>
           <attributeDefinition>wind speed</attributeDefinition>
           <storageType>float</storageType>
@@ -726,7 +697,7 @@ Data are downloaded manually at approximately monthly intervals.
             </ratio>
           </measurementScale>
         </attribute>
-        <attribute id="5add93e77e6c2a84468094c7975e0965_9">
+        <attribute id="cd6ea4e175011cd1140975ec263c5f77_9">
           <attributeName>winddir</attributeName>
           <attributeDefinition>wind direction</attributeDefinition>
           <storageType>float</storageType>
@@ -744,12 +715,8 @@ Data are downloaded manually at approximately monthly intervals.
               </numericDomain>
             </ratio>
           </measurementScale>
-          <missingValueCode>
-            <code>NA</code>
-            <codeExplanation>missing value</codeExplanation>
-          </missingValueCode>
         </attribute>
-        <attribute id="5add93e77e6c2a84468094c7975e0965_10">
+        <attribute id="cd6ea4e175011cd1140975ec263c5f77_10">
           <attributeName>rain_mm_tot</attributeName>
           <attributeDefinition>precipitation</attributeDefinition>
           <storageType>float</storageType>
@@ -767,21 +734,17 @@ Data are downloaded manually at approximately monthly intervals.
               </numericDomain>
             </ratio>
           </measurementScale>
-          <missingValueCode>
-            <code>NA</code>
-            <codeExplanation>missing value</codeExplanation>
-          </missingValueCode>
         </attribute>
       </attributeList>
-      <numberOfRecords>1011142</numberOfRecords>
+      <numberOfRecords>7057989</numberOfRecords>
     </dataTable>
     <dataTable id="636_micromet_data_2006_2010.csv">
       <entityName>636_micromet_data_2006_2010.csv</entityName>
       <entityDescription>Micrometeorological data from the CAP LTER weather stations located at the Desert Botanical Garden and Lost Dutchman State Park, AZ, USA sites. Data are 10-min averages of measurements collected at 5-second intervals. Data collected 2006 through 2010.</entityDescription>
       <physical>
         <objectName>636_micromet_data_2006_2010.csv</objectName>
-        <size unit="bytes">29482797</size>
-        <authentication method="MD5">41d3af25404706bc5b3b37332590d304</authentication>
+        <size unit="bytes">144443056</size>
+        <authentication method="MD5">64e58df86246e393a7ec5052824e1c88</authentication>
         <dataFormat>
           <externallyDefinedFormat>
             <formatName>Comma Separated Values Text</formatName>
@@ -794,7 +757,7 @@ Data are downloaded manually at approximately monthly intervals.
         </distribution>
       </physical>
       <attributeList>
-        <attribute id="41d3af25404706bc5b3b37332590d304_1">
+        <attribute id="64e58df86246e393a7ec5052824e1c88_1">
           <attributeName>timestamp</attributeName>
           <attributeDefinition>date and time of observation</attributeDefinition>
           <storageType>date</storageType>
@@ -805,7 +768,7 @@ Data are downloaded manually at approximately monthly intervals.
             </dateTime>
           </measurementScale>
         </attribute>
-        <attribute id="41d3af25404706bc5b3b37332590d304_2">
+        <attribute id="64e58df86246e393a7ec5052824e1c88_2">
           <attributeName>site_code</attributeName>
           <attributeDefinition>study location</attributeDefinition>
           <storageType>string</storageType>
@@ -826,7 +789,7 @@ Data are downloaded manually at approximately monthly intervals.
             </nominal>
           </measurementScale>
         </attribute>
-        <attribute id="41d3af25404706bc5b3b37332590d304_3">
+        <attribute id="64e58df86246e393a7ec5052824e1c88_3">
           <attributeName>replicate</attributeName>
           <attributeDefinition>number of observations from the same station with identical timestamps but contrasting readings</attributeDefinition>
           <storageType>float</storageType>
@@ -845,7 +808,7 @@ Data are downloaded manually at approximately monthly intervals.
             <codeExplanation>missing value</codeExplanation>
           </missingValueCode>
         </attribute>
-        <attribute id="41d3af25404706bc5b3b37332590d304_4">
+        <attribute id="64e58df86246e393a7ec5052824e1c88_4">
           <attributeName>airtc_avg</attributeName>
           <attributeDefinition>air temperature</attributeDefinition>
           <storageType>float</storageType>
@@ -863,12 +826,8 @@ Data are downloaded manually at approximately monthly intervals.
               </numericDomain>
             </ratio>
           </measurementScale>
-          <missingValueCode>
-            <code>NA</code>
-            <codeExplanation>missing value</codeExplanation>
-          </missingValueCode>
         </attribute>
-        <attribute id="41d3af25404706bc5b3b37332590d304_5">
+        <attribute id="64e58df86246e393a7ec5052824e1c88_5">
           <attributeName>rh</attributeName>
           <attributeDefinition>relative humidity</attributeDefinition>
           <storageType>float</storageType>
@@ -887,7 +846,7 @@ Data are downloaded manually at approximately monthly intervals.
             </ratio>
           </measurementScale>
         </attribute>
-        <attribute id="41d3af25404706bc5b3b37332590d304_6">
+        <attribute id="64e58df86246e393a7ec5052824e1c88_6">
           <attributeName>slrkw_avg</attributeName>
           <attributeDefinition>average solar radiation</attributeDefinition>
           <storageType>float</storageType>
@@ -905,12 +864,8 @@ Data are downloaded manually at approximately monthly intervals.
               </numericDomain>
             </ratio>
           </measurementScale>
-          <missingValueCode>
-            <code>NA</code>
-            <codeExplanation>missing value</codeExplanation>
-          </missingValueCode>
         </attribute>
-        <attribute id="41d3af25404706bc5b3b37332590d304_7">
+        <attribute id="64e58df86246e393a7ec5052824e1c88_7">
           <attributeName>slrmj_tot</attributeName>
           <attributeDefinition>total solar radiation</attributeDefinition>
           <storageType>float</storageType>
@@ -928,12 +883,8 @@ Data are downloaded manually at approximately monthly intervals.
               </numericDomain>
             </ratio>
           </measurementScale>
-          <missingValueCode>
-            <code>NA</code>
-            <codeExplanation>missing value</codeExplanation>
-          </missingValueCode>
         </attribute>
-        <attribute id="41d3af25404706bc5b3b37332590d304_8">
+        <attribute id="64e58df86246e393a7ec5052824e1c88_8">
           <attributeName>ws_ms_avg</attributeName>
           <attributeDefinition>wind speed</attributeDefinition>
           <storageType>float</storageType>
@@ -952,7 +903,7 @@ Data are downloaded manually at approximately monthly intervals.
             </ratio>
           </measurementScale>
         </attribute>
-        <attribute id="41d3af25404706bc5b3b37332590d304_9">
+        <attribute id="64e58df86246e393a7ec5052824e1c88_9">
           <attributeName>winddir</attributeName>
           <attributeDefinition>wind direction</attributeDefinition>
           <storageType>float</storageType>
@@ -971,7 +922,7 @@ Data are downloaded manually at approximately monthly intervals.
             </ratio>
           </measurementScale>
         </attribute>
-        <attribute id="41d3af25404706bc5b3b37332590d304_10">
+        <attribute id="64e58df86246e393a7ec5052824e1c88_10">
           <attributeName>rain_mm_tot</attributeName>
           <attributeDefinition>precipitation</attributeDefinition>
           <storageType>float</storageType>
@@ -991,7 +942,7 @@ Data are downloaded manually at approximately monthly intervals.
           </measurementScale>
         </attribute>
       </attributeList>
-      <numberOfRecords>448126</numberOfRecords>
+      <numberOfRecords>3135993</numberOfRecords>
     </dataTable>
     <dataTable id="636_maintenance_log.csv">
       <entityName>636_maintenance_log.csv</entityName>
@@ -1163,7 +1114,7 @@ Data are downloaded manually at approximately monthly intervals.
         </dataFormat>
         <distribution>
           <online>
-            <url>https://data.gios.asu.edu/datasets/cap/636_CNDep_DBG_MetTower.CR1</url>
+            <url>https://gios-data.s3.us-west-2.amazonaws.com/datasets/cap/636_CNDep_DBG_MetTower.CR1</url>
           </online>
         </distribution>
       </physical>
@@ -1199,7 +1150,7 @@ Data are downloaded manually at approximately monthly intervals.
         </dataFormat>
         <distribution>
           <online>
-            <url>https://data.gios.asu.edu/datasets/cap/636_CNDep_LDP_MetTower.CR1</url>
+            <url>https://gios-data.s3.us-west-2.amazonaws.com/datasets/cap/636_CNDep_LDP_MetTower.CR1</url>
           </online>
         </distribution>
       </physical>
@@ -1208,87 +1159,87 @@ Data are downloaded manually at approximately monthly intervals.
     </otherEntity>
   </dataset>
   <annotations>
-    <annotation references="7743e29505fd40a2ce27c96c96b75c60_10">
+    <annotation references="4391bffa369fb0e217f714870f911924_10">
       <propertyURI label="has unit">http://qudt.org/schema/qudt/hasUnit</propertyURI>
       <valueURI label="Millimeter">http://qudt.org/vocab/unit/MilliM</valueURI>
     </annotation>
-    <annotation references="7743e29505fd40a2ce27c96c96b75c60_3">
+    <annotation references="4391bffa369fb0e217f714870f911924_3">
       <propertyURI label="has unit">http://qudt.org/schema/qudt/hasUnit</propertyURI>
       <valueURI label="Number">http://qudt.org/vocab/unit/NUM</valueURI>
     </annotation>
-    <annotation references="7743e29505fd40a2ce27c96c96b75c60_4">
+    <annotation references="4391bffa369fb0e217f714870f911924_4">
       <propertyURI label="has unit">http://qudt.org/schema/qudt/hasUnit</propertyURI>
       <valueURI label="degree Celsius">http://qudt.org/vocab/unit/DEG_C</valueURI>
     </annotation>
-    <annotation references="7743e29505fd40a2ce27c96c96b75c60_5">
+    <annotation references="4391bffa369fb0e217f714870f911924_5">
       <propertyURI label="has unit">http://qudt.org/schema/qudt/hasUnit</propertyURI>
       <valueURI label="Percent">http://qudt.org/vocab/unit/PERCENT</valueURI>
     </annotation>
-    <annotation references="7743e29505fd40a2ce27c96c96b75c60_7">
+    <annotation references="4391bffa369fb0e217f714870f911924_7">
       <propertyURI label="has unit">http://qudt.org/schema/qudt/hasUnit</propertyURI>
       <valueURI label="Megajoule Per Square Meter">http://qudt.org/vocab/unit/MegaJ-PER-M2</valueURI>
     </annotation>
-    <annotation references="7743e29505fd40a2ce27c96c96b75c60_8">
+    <annotation references="4391bffa369fb0e217f714870f911924_8">
       <propertyURI label="has unit">http://qudt.org/schema/qudt/hasUnit</propertyURI>
       <valueURI label="Meter per Second">http://qudt.org/vocab/unit/M-PER-SEC</valueURI>
     </annotation>
-    <annotation references="7743e29505fd40a2ce27c96c96b75c60_9">
+    <annotation references="4391bffa369fb0e217f714870f911924_9">
       <propertyURI label="has unit">http://qudt.org/schema/qudt/hasUnit</propertyURI>
       <valueURI label="Degree">http://qudt.org/vocab/unit/DEG</valueURI>
     </annotation>
-    <annotation references="5add93e77e6c2a84468094c7975e0965_10">
+    <annotation references="cd6ea4e175011cd1140975ec263c5f77_10">
       <propertyURI label="has unit">http://qudt.org/schema/qudt/hasUnit</propertyURI>
       <valueURI label="Millimeter">http://qudt.org/vocab/unit/MilliM</valueURI>
     </annotation>
-    <annotation references="5add93e77e6c2a84468094c7975e0965_3">
+    <annotation references="cd6ea4e175011cd1140975ec263c5f77_3">
       <propertyURI label="has unit">http://qudt.org/schema/qudt/hasUnit</propertyURI>
       <valueURI label="Number">http://qudt.org/vocab/unit/NUM</valueURI>
     </annotation>
-    <annotation references="5add93e77e6c2a84468094c7975e0965_4">
+    <annotation references="cd6ea4e175011cd1140975ec263c5f77_4">
       <propertyURI label="has unit">http://qudt.org/schema/qudt/hasUnit</propertyURI>
       <valueURI label="degree Celsius">http://qudt.org/vocab/unit/DEG_C</valueURI>
     </annotation>
-    <annotation references="5add93e77e6c2a84468094c7975e0965_5">
+    <annotation references="cd6ea4e175011cd1140975ec263c5f77_5">
       <propertyURI label="has unit">http://qudt.org/schema/qudt/hasUnit</propertyURI>
       <valueURI label="Percent">http://qudt.org/vocab/unit/PERCENT</valueURI>
     </annotation>
-    <annotation references="5add93e77e6c2a84468094c7975e0965_7">
+    <annotation references="cd6ea4e175011cd1140975ec263c5f77_7">
       <propertyURI label="has unit">http://qudt.org/schema/qudt/hasUnit</propertyURI>
       <valueURI label="Megajoule Per Square Meter">http://qudt.org/vocab/unit/MegaJ-PER-M2</valueURI>
     </annotation>
-    <annotation references="5add93e77e6c2a84468094c7975e0965_8">
+    <annotation references="cd6ea4e175011cd1140975ec263c5f77_8">
       <propertyURI label="has unit">http://qudt.org/schema/qudt/hasUnit</propertyURI>
       <valueURI label="Meter per Second">http://qudt.org/vocab/unit/M-PER-SEC</valueURI>
     </annotation>
-    <annotation references="5add93e77e6c2a84468094c7975e0965_9">
+    <annotation references="cd6ea4e175011cd1140975ec263c5f77_9">
       <propertyURI label="has unit">http://qudt.org/schema/qudt/hasUnit</propertyURI>
       <valueURI label="Degree">http://qudt.org/vocab/unit/DEG</valueURI>
     </annotation>
-    <annotation references="41d3af25404706bc5b3b37332590d304_10">
+    <annotation references="64e58df86246e393a7ec5052824e1c88_10">
       <propertyURI label="has unit">http://qudt.org/schema/qudt/hasUnit</propertyURI>
       <valueURI label="Millimeter">http://qudt.org/vocab/unit/MilliM</valueURI>
     </annotation>
-    <annotation references="41d3af25404706bc5b3b37332590d304_3">
+    <annotation references="64e58df86246e393a7ec5052824e1c88_3">
       <propertyURI label="has unit">http://qudt.org/schema/qudt/hasUnit</propertyURI>
       <valueURI label="Number">http://qudt.org/vocab/unit/NUM</valueURI>
     </annotation>
-    <annotation references="41d3af25404706bc5b3b37332590d304_4">
+    <annotation references="64e58df86246e393a7ec5052824e1c88_4">
       <propertyURI label="has unit">http://qudt.org/schema/qudt/hasUnit</propertyURI>
       <valueURI label="degree Celsius">http://qudt.org/vocab/unit/DEG_C</valueURI>
     </annotation>
-    <annotation references="41d3af25404706bc5b3b37332590d304_5">
+    <annotation references="64e58df86246e393a7ec5052824e1c88_5">
       <propertyURI label="has unit">http://qudt.org/schema/qudt/hasUnit</propertyURI>
       <valueURI label="Percent">http://qudt.org/vocab/unit/PERCENT</valueURI>
     </annotation>
-    <annotation references="41d3af25404706bc5b3b37332590d304_7">
+    <annotation references="64e58df86246e393a7ec5052824e1c88_7">
       <propertyURI label="has unit">http://qudt.org/schema/qudt/hasUnit</propertyURI>
       <valueURI label="Megajoule Per Square Meter">http://qudt.org/vocab/unit/MegaJ-PER-M2</valueURI>
     </annotation>
-    <annotation references="41d3af25404706bc5b3b37332590d304_8">
+    <annotation references="64e58df86246e393a7ec5052824e1c88_8">
       <propertyURI label="has unit">http://qudt.org/schema/qudt/hasUnit</propertyURI>
       <valueURI label="Meter per Second">http://qudt.org/vocab/unit/M-PER-SEC</valueURI>
     </annotation>
-    <annotation references="41d3af25404706bc5b3b37332590d304_9">
+    <annotation references="64e58df86246e393a7ec5052824e1c88_9">
       <propertyURI label="has unit">http://qudt.org/schema/qudt/hasUnit</propertyURI>
       <valueURI label="Degree">http://qudt.org/vocab/unit/DEG</valueURI>
     </annotation>

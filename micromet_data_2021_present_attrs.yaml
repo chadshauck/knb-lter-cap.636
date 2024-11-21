@@ -86,7 +86,7 @@
     unit: M-PER-SEC
     numberType: real
     minimum: 0.0
-    maximum: 15.59
+    maximum: 16.45
     columnClasses: numeric
   winddir:
     attributeName: winddir
