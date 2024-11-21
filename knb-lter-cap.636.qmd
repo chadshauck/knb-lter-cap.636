@@ -27,18 +27,33 @@ micromet_data <- DBI::dbGetQuery(
   -- WHERE
   --   timestamp >= '2021-01-01'
   ;
-  ")
-
-micromet_data <- micromet_data |>
-tidyr::pivot_wider(
-  names_from  = variablecode,
-  values_from = reading
-) |>
-dplyr::mutate(
-  site_code = as.factor(site_code)
+  "
 )
 
+micromet_data <- micromet_data |>
+  tidyr::pivot_wider(
+    names_from  = variablecode,
+    values_from = reading
+  ) |>
+  dplyr::mutate(
+    site_code = as.factor(site_code)
+  )
+
 names(micromet_data) <- tolower(names(micromet_data))
+
+expected_names <- c(
+  "timestamp",
+  "site_code",
+  "replicate",
+  "airtc_avg",
+  "rh",
+  "slrkw_avg",
+  "slrmj_tot",
+  "ws_ms_avg",
+  "winddir",
+  "rain_mm_tot"
+)
+
 ```
 
 # DT: micromet_data_2021_present
@@ -50,14 +65,18 @@ names(micromet_data) <- tolower(names(micromet_data))
 #| warning: TRUE
 
 micromet_data_2021_present <- micromet_data |>
-  dplyr::filter(timestamp >= "2021-01-01")
+  dplyr::filter(timestamp >= "2021-01-01") |>
+  pointblank::col_exists(
+    columns = expected_names,
+    actions = pointblank::stop_on_fail()
+  )
 
 # try({
 #   capeml::write_attributes(micromet_data_2021_present, overwrite = FALSE)
 #   capeml::write_factors(micromet_data_2021_present, overwrite = FALSE)
 # })
 
-# capeml::update_attributes(micromet_data_2021_present)
+capeml::update_attributes(micromet_data_2021_present)
 ```
 
 
@@ -70,7 +89,11 @@ micromet_data_2021_present <- micromet_data |>
 #| warning: TRUE
 
 micromet_data_2011_2020 <- micromet_data |>
-  dplyr::filter(timestamp >= "2011-01-01" & timestamp <= "2020-12-31")
+  dplyr::filter(timestamp >= "2011-01-01" & timestamp <= "2020-12-31") |>
+  pointblank::col_exists(
+    columns = expected_names,
+    actions = pointblank::stop_on_fail()
+  )
 
 # try({
 #   capeml::write_attributes(micromet_data_2011_2020, overwrite = FALSE)
@@ -90,7 +113,11 @@ micromet_data_2011_2020 <- micromet_data |>
 #| warning: TRUE
 
 micromet_data_2006_2010 <- micromet_data |>
-  dplyr::filter(timestamp <= "2010-12-31")
+  dplyr::filter(timestamp <= "2010-12-31") |>
+  pointblank::col_exists(
+    columns = expected_names,
+    actions = pointblank::stop_on_fail()
+  )
 
 # try({
 #   capeml::write_attributes(micromet_data_2006_2010, overwrite = FALSE)
